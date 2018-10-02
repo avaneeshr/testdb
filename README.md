@@ -1,4 +1,4 @@
-# CapOne COAF LS SQL Sever
+#  SQL Sever
 
 This module will provision a windows 2016 EC2 instance with SQL Server 2016 in AWS using terraform. 
 
