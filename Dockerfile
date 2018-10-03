@@ -18,6 +18,8 @@ RUN rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip; rm terraform_${TERRAFO
 RUN apk add --no-cache python3 \
 && python3 -m ensurepip \
 && pip3 install --upgrade pip setuptools \
+&& pip3 install --upgrade awscli \
+&& pip3 install --upgrade boto3 \
 && rm -r /usr/lib/python*/ensurepip && \
 if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
 if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
