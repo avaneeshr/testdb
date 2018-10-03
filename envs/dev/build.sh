@@ -35,7 +35,7 @@ terraform_func(){
       -e TF_VAR_offset=${TF_VAR_offset}                 \
       ${TTY}                                            \
       ${REPO_NAME}:${VERSION_TAG}                       \
-        terraform $1 $2 
+        terraform $1 $2 $3 $4 $5 $6
 }
 
 init(){
@@ -43,7 +43,7 @@ init(){
 }
 
 plan(){
-    terraform_func plan
+    terraform_func plan $1 $2 $3 
 }
 
 apply(){
