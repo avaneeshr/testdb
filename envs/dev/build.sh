@@ -23,16 +23,18 @@ $(aws ecr get-login --no-include-email)
 
 # Wrap the docker Terraform function
 terraform_func(){
+    echo $(pwd)
     docker run                                          \
       --rm                                              \
       -v $(pwd):/workspace                              \
+      -v $(pwd):/workspace/.terraform                   \
       -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}         \
       -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} \
       -e AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}         \
       -e TF_VAR_offset=${TF_VAR_offset}                 \
       ${TTY}                                            \
       ${REPO_NAME}:${VERSION_TAG}                       \
-        terraform $1 $2
+        terraform $1 $2 
 }
 
 init(){
