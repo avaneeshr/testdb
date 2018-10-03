@@ -23,7 +23,7 @@ $(aws ecr get-login --no-include-email)
 
 # Wrap the docker Terraform function
 terraform_func(){
-    echo $(pwd)
+    echo "value of $1 and $2 and $3 and $4"
     docker run                                          \
       --rm                                              \
       -w /workspace/envs/dev                            \
