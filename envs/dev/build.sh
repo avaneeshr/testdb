@@ -26,6 +26,7 @@ terraform_func(){
     echo $(pwd)
     docker run                                          \
       --rm                                              \
+      -w /workspace/envs/dev                            \
       -v $(pwd):/workspace                              \
       -v $(pwd):/workspace/.terraform                   \
       -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}         \
