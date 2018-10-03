@@ -7,9 +7,9 @@ ec2Subnets = []
 def getSubnet(li1, li2):
     subnet =  list(set(li1) - set(li2))
     if len(subnet) > 0:
-      print(subnet[0]) 
+      print(subnet[0])
     else:
-      print("") 
+      print("")
     sys.exit(0)
 
 # Connect to EC2
