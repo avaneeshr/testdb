@@ -43,7 +43,7 @@ init(){
 }
 
 plan(){
-    terraform_func plan -var "ami_id=${ami_id} -var "aws_region=${region}" -var "subnet_id=${subnet}"
+    terraform_func plan -var "ami_id=$2" -var "aws_region=$2" -var "subnet_id=$3"
 }
 
 apply(){
